@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Controle do Braço Robótico</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+    }
+    h2 { color: #333; }
+    .slider-container {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Controle do Braço Robótico</h2>
+
+  <div class="slider-container">
+    <label>Servo 1: <input type="range" min="0" max="180" id="servo1" value="90"></label>
+  </div>
+
+  <div class="slider-container">
+    <label>Servo 2: <input type="range" min="0" max="180" id="servo2" value="90"></label>
+  </div>
+
+  <div class="slider-container">
+    <label>Servo 3: <input type="range" min="0" max="180" id="servo3" value="90"></label>
+  </div>
+
+  <script>
+    const sliders = ['servo1', 'servo2', 'servo3'];
+
+    sliders.forEach(id => {
+      document.getElementById(id).addEventListener('input', () => {
+        fetch('/set_angle', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            servo1: document.getElementById('servo1').value,
+            servo2: document.getElementById('servo2').value,
+            servo3: document.getElementById('servo3').value
+          })
+        });
+      });
+    });
+  </script>
+</body>
+</html>
