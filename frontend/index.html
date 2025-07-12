@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
@@ -27,6 +27,127 @@
 
   <div class="slider-container">
     <label>Servo 3: <input type="range" min="0" max="180" id="servo3" value="90"></label>
+  </div>
+
+  <script>
+    const sliders = ['servo1', 'servo2', 'servo3'];
+
+    sliders.forEach(id => {
+      document.getElementById(id).addEventListener('input', () => {
+        fetch('/set_angle', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            servo1: document.getElementById('servo1').value,
+            servo2: document.getElementById('servo2').value,
+            servo3: document.getElementById('servo3').value
+          })
+        });
+      });
+    });
+  </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Controle do Braço Robótico</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #121212;
+      color: #f0f0f0;
+      margin: 40px;
+    }
+
+    h2 {
+      color: #ffffff;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .slider-container {
+      margin-bottom: 30px;
+      padding: 10px;
+      background-color: #1e1e1e;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.6);
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    label {
+      display: flex;
+      flex-direction: column;
+      font-size: 1.1em;
+      color: #ffffff;
+    }
+
+    input[type=range] {
+      -webkit-appearance: none;
+      width: 100%;
+      height: 10px;
+      background: #333;
+      border-radius: 5px;
+      outline: none;
+      margin-top: 10px;
+    }
+
+    input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      background: #03dac6;
+      cursor: pointer;
+      border-radius: 50%;
+      box-shadow: 0 0 5px #03dac6;
+    }
+
+    input[type=range]::-moz-range-thumb {
+      width: 20px;
+      height: 20px;
+      background: #03dac6;
+      cursor: pointer;
+      border-radius: 50%;
+      box-shadow: 0 0 5px #03dac6;
+    }
+
+    input[type=range]::-webkit-slider-runnable-track {
+      background: linear-gradient(90deg, #03dac6 0%, #018786 100%);
+      height: 10px;
+      border-radius: 5px;
+    }
+
+    input[type=range]::-moz-range-track {
+      background: linear-gradient(90deg, #03dac6 0%, #018786 100%);
+      height: 10px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Controle do Braço Robótico</h2>
+
+  <div class="slider-container">
+    <label>Servo 1:
+      <input type="range" min="0" max="180" id="servo1" value="90">
+    </label>
+  </div>
+
+  <div class="slider-container">
+    <label>Servo 2:
+      <input type="range" min="0" max="180" id="servo2" value="90">
+    </label>
+  </div>
+
+  <div class="slider-container">
+    <label>Servo 3:
+      <input type="range" min="0" max="180" id="servo3" value="90">
+    </label>
   </div>
 
   <script>

@@ -5,7 +5,7 @@ import os
 app = Flask(__name__, static_folder='../frontend')
 
 # Mude a porta conforme seu sistema (ex: COM3 no Windows, /dev/ttyUSB0 no Linux)
-#arduino = serial.Serial('COM3', 9600)  
+arduino = serial.Serial('COM6', 9600)  
 
 @app.route('/')
 def index():
@@ -14,8 +14,8 @@ def index():
 @app.route('/set_angle', methods=['POST'])
 def set_angle():
     data = request.json
-    #command = f"{data['servo1']},{data['servo2']},{data['servo3']}\n"
-    #arduino.write(command.encode())
+    command = f"{data['servo1']},{data['servo2']},{data['servo3']}\n"
+    arduino.write(command.encode())
     return 'OK'
 
 if __name__ == '__main__':
