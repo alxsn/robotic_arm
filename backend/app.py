@@ -14,7 +14,7 @@ def index():
 @app.route('/set_angle', methods=['POST'])
 def set_angle():
     data = request.json
-    command = f"{data['servo1']},{data['servo2']},{data['servo3']}\n"
+    command = f"{data['servo1']},{data['servo2']},{data['servo3']},{data['servo4']},{data['servo5']},{data['servo6']}\n"
     arduino.write(command.encode())
     return 'OK'
 

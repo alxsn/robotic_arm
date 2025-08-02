@@ -150,8 +150,26 @@
     </label>
   </div>
 
+  <div class="slider-container">
+    <label>Servo 4:
+      <input type="range" min="0" max="180" id="servo4" value="90">
+    </label>
+  </div>
+
+  <div class="slider-container">
+    <label>Servo 5:
+      <input type="range" min="0" max="180" id="servo5" value="90">
+    </label>
+  </div>
+
+  <div class="slider-container">
+    <label>Servo 6:
+      <input type="range" min="0" max="180" id="servo6" value="90">
+    </label>
+  </div>
+
   <script>
-    const sliders = ['servo1', 'servo2', 'servo3'];
+    const sliders = ['servo1', 'servo2', 'servo3', 'servo4', 'servo5', 'servo6'];
 
     sliders.forEach(id => {
       document.getElementById(id).addEventListener('input', () => {
@@ -161,7 +179,10 @@
           body: JSON.stringify({
             servo1: document.getElementById('servo1').value,
             servo2: document.getElementById('servo2').value,
-            servo3: document.getElementById('servo3').value
+            servo3: document.getElementById('servo3').value,
+            servo4: document.getElementById('servo4').value,
+            servo5: document.getElementById('servo5').value,
+            servo6: document.getElementById('servo6').value
           })
         });
       });
