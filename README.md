@@ -105,7 +105,7 @@ Sistema modular que pode ser expandido para integração com visão computaciona
 
 ## 👥 Equipe
 
-Alunos: Alexsander Barbosa Moura, Elder, Guilherme, José Vitor Zorzal
+Alunos: Alexsander Barbosa Moura, Elder Ribeiro Storck, Guilherme dayrell Cruz Soares, José Vitor Zorzal
 
 Orientadores: Prof. Rodolfo da Silva Villaca, Prof. Ricardo Carminati de Mello.
 
