@@ -38,18 +38,21 @@ O objetivo principal é permitir que o usuário **controle remotamente cada arti
 ---
 
 ## 📂 Estrutura do Projeto
+
+```text
 projeto-braco-robotico/
 │
 ├── backend/
-│ └── app.py # Servidor Flask (comunicação com Arduino)
+│   └── app.py        # Servidor Flask (comunicação com Arduino)
 │
 ├── frontend/
-│ └── index.html # Interface web (sliders para controle dos servos)
+│   └── index.html    # Interface web (sliders para controle dos servos)
 │
 ├── arduino/
-│ └── arduino.ino # Código Arduino (controle dos servos + leitura QMC5883L)
+│   └── arduino.ino   # Código Arduino (controle dos servos + leitura QMC5883L)
 │
-└── README.md # Documentação do projeto
+└── README.md         # Documentação do projeto
+
 
 
 ---
@@ -73,13 +76,16 @@ python backend/app.py
 
 O servidor rodará em http://localhost:5000.
 
-3. Interface Web
+### 3. Interface Web
 
 Abra o navegador e acesse http://localhost:5000.
 
 Use os sliders para movimentar cada servo em tempo real.
 
-📊 Resultados Esperados
+
+---
+
+## 📊 Resultados Esperados
 
 Controle intuitivo do braço via interface web.
 
@@ -89,9 +95,15 @@ Controle de pressão da garra pelo sensor QMC5883L.
 
 Sistema modular que pode ser expandido para integração com visão computacional ou controle automático.
 
-📸 Demonstração
 
-👥 Equipe
+---
+
+## 📸 Demonstração
+
+
+---
+
+## 👥 Equipe
 
 Alunos: Alexsander Barbosa Moura, Elder, Guilherme, José Vitor Zorzal
 
@@ -99,7 +111,10 @@ Orientadores: Prof. Rodolfo da Silva Villaca, Prof. Ricardo Carminati de Mello.
 
 Disciplina: Projeto Integrado de Computação 2
 
-📌 Conclusão
+
+---
+
+## 📌 Conclusão
 
 Este projeto demonstrou a aplicação prática de conceitos de:
 
